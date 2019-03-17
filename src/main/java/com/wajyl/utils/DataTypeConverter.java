@@ -20,7 +20,10 @@ public class DataTypeConverter {
     }
 
     public static int bytesToInt(byte[] bytes) {
-        ByteBuffer wrapped = ByteBuffer.wrap(bytes);
-        return wrapped.getInt();
+        return ByteBuffer.wrap(bytes).getInt();
+    }
+
+    public static int bytesToShort(byte[] bytes) {
+        return ByteBuffer.wrap(bytes).getShort();
     }
 }
