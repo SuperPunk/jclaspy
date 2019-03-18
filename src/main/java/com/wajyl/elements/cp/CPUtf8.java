@@ -12,9 +12,10 @@ public class CPUtf8 extends ConstantPool {
     @Override
     public void interpret() {
         String hexString = DataTypeConverter.bytesToHex(bytes);
+        String utf8String = new String(bytes, 3, bytes.length - 3);
         //tag length UTF8String
         System.out.println(
-                hexString.substring(0, 2) + " " + hexString.substring(2, 6) + " " + hexString.substring(6)
+                hexString.substring(0, 2) + " " + hexString.substring(2, 6) + " " + utf8String
         );
     }
 
