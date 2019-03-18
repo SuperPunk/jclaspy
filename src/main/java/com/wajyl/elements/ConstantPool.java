@@ -20,8 +20,14 @@ public class ConstantPool extends ClazzParser {
     @Override
     public void interpret() {
         System.out.println(DataTypeConverter.bytesToHex(cpCountBytes) + "\t# 常量池项数+1");
+        int count = 1;
         for (ConstantPool cpItem : cpItems) {
+            System.out.print("[" + (count++) + "] ");
             cpItem.interpret();
+            //double或者long类型占两项常量
+            if (cpItem instanceof CPLong || cpItem instanceof CPDouble) {
+                System.out.println("[" + (count++) + "] large numeric continued...");
+            }
         }
     }
 
