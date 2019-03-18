@@ -1,9 +1,6 @@
 package com.wajyl;
 
-import com.wajyl.elements.AccessFlag;
-import com.wajyl.elements.ConstantPool;
-import com.wajyl.elements.MagicNumber;
-import com.wajyl.elements.Version;
+import com.wajyl.elements.*;
 
 import java.io.BufferedInputStream;
 import java.io.FileInputStream;
@@ -23,7 +20,10 @@ public class App {
                 new MagicNumber(),
                 new Version(),
                 new ConstantPool(),
-                new AccessFlag()
+                new AccessFlag(),
+                new ThisClassRef(),
+                new SuperClassRef(),
+                new InterfaceRef()
         );
         for (ClazzParser element : elements) {
             element.build(inputStream);
