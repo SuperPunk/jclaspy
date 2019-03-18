@@ -1,5 +1,6 @@
 package com.wajyl;
 
+import com.wajyl.elements.AccessFlag;
 import com.wajyl.elements.ConstantPool;
 import com.wajyl.elements.MagicNumber;
 import com.wajyl.elements.Version;
@@ -21,7 +22,8 @@ public class App {
         List<ClazzParser> elements = Arrays.asList(
                 new MagicNumber(),
                 new Version(),
-                new ConstantPool()
+                new ConstantPool(),
+                new AccessFlag()
         );
         for (ClazzParser element : elements) {
             element.build(inputStream);
